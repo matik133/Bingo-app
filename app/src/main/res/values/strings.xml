@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pilkarskie bingo</string>
+    <string name="graj">Zagraj</string>
+    <string name="stworz">Stwórz własne bingo</string>
+    <string name="opis">O aplikacji</string>
+    <string name="zglos">Zgłoś uwagi</string>
+    <string name="wybierz">Wybierz planszę</string>
+    <string name="Hajto">Hajto</string>
+    <string name="stworzone">Stworzone plansze</string>
+    <string name="plansza_usera">Plansza usera test</string>
+</resources>
