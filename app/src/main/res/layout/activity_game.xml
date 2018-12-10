@@ -8,20 +8,20 @@
     android:background="@drawable/tlo2">
 
     <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="353dp"
+        android:layout_height="284dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        >
+        android:layout_marginEnd="15dp"
+        android:clickable="true">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:text="TextView" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:text="TextView" />
 
 
         <TableRow
@@ -231,5 +231,70 @@
                 android:text="TextView" />
         </TableRow>
     </TableLayout>
+
+    <EditText
+        android:id="@+id/autorField"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginBottom="110dp"
+        android:hint="Podaj autora"
+        android:textColor="#000000"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/autorField"
+        android:text="Autor" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:text="Tekst" />
+
+    <EditText
+        android:id="@+id/sentenceField"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView17"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp"
+        android:hint="Podaj tekst"
+        android:textColor="#000000"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
+        android:text="Submit" />
+
+    <Button
+        android:id="@+id/showButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="56dp"
+        android:text="Show data" />
+
+    <TextView
+        android:id="@+id/dataView"
+        android:layout_width="196dp"
+        android:layout_height="67dp"
+        android:layout_alignStart="@+id/autorField"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="158dp"
+        />
 
 </RelativeLayout>
