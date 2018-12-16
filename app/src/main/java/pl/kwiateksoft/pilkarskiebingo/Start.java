@@ -15,13 +15,16 @@ public class Start extends AppCompatActivity {
 
     public void onClick(View view) {
 
+        Intent intent;
         switch (view.getId()){
             case R.id.play:
-                Intent intent = new Intent(Start.this, ListActivity.class);
+                intent = new Intent(Start.this, ListActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.create:
+                intent = new Intent(Start.this, Create.class);
+                startActivity(intent);
                 break;
 
             case R.id.info:

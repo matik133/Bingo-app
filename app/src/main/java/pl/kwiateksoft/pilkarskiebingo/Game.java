@@ -39,15 +39,21 @@ public class Game extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        db = new Database(this);
+        if (db==null){
+            db = new Database(this);
+        }
         insert = (Button) findViewById(R.id.saveButton);
         show = (Button) findViewById(R.id.showButton);
         autor = (EditText) findViewById(R.id.autorField);
         sentence = (EditText) findViewById(R.id.sentenceField);
         dataView = (TextView) findViewById(R.id.showButton);
-        String tittle;
-        String wiadomosc;
 
+        fillFieldsList(); //wywołanie metody uzupełniającej listę i pola
+
+
+        /*
+        wyświetlanie zawartości bazy (lista plansz lub tekstów)
+         */
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +76,9 @@ public class Game extends AppCompatActivity {
 
 
 
+        /*
+        metoda zapisu do bazy danych
+         */
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,8 +93,12 @@ public class Game extends AppCompatActivity {
         });
 
 
+    }
 
-
+    /*
+    uzupełnienie listy tekstów (tmp)
+     */
+    public void fillFieldsList (){
         fieldsList.add((TextView)findViewById(R.id.field1));
         fieldsList.add((TextView)findViewById(R.id.field2));
         fieldsList.add((TextView)findViewById(R.id.field3));
@@ -112,11 +125,11 @@ public class Game extends AppCompatActivity {
         fieldsList.add((TextView)findViewById(R.id.field24));
         fieldsList.add((TextView)findViewById(R.id.field25));
         fillFields();
-        
-        
-
     }
 
+    /*
+    metoda uzupełniająca pola bingo tekstami z listy (będzie z bazy)
+     */
     public void fillFields(){
 
         List<String> bingoWordList2=bingoWordList; //lista zapasowa do usuwania elementów
@@ -133,30 +146,32 @@ public class Game extends AppCompatActivity {
     }
 
     public void onClick(View view) {
+        String test = view.getResources().getResourceEntryName(view.getId());
+        TextView t = findViewById(view.getId());
+        t.setText("SPRAWDZAM");
+        Toast.makeText(this, test, Toast.LENGTH_LONG).show();
 
-        t = (TextView)findViewById( R.id.field1);
+        switch (view.getId()) {
+            case R.id.field1:
+                t= findViewById(R.id.field1);
+                t.setBackgroundColor(Color.RED);
+                //t.setText("DUPA");
 
-
-
-
-        if (isClicked==false){
-            for (TextView field : fieldsList)
-            {
-                field.setBackgroundColor(Color.BLUE);
-
-            }
-            isClicked=true;
-            t.setText("Clicked");
+                break;
+            case R.id.field2:
+                // do something else
+                break;
+            case R.id.field3:
+                // i'm lazy, do nothing
+                break;
+            case R.id.field4:
+                // do something else
+                break;
+            case R.id.field5:
+                // i'm lazy, do nothing
+                break;
         }
-        else {
-            for (TextView field : fieldsList)
-            {
-                field.setBackgroundColor(Color.RED);
 
-            }
-            t.setText("Click me");
-            isClicked=false;
-        }
 
 
     }

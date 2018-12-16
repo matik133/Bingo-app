@@ -19,13 +19,20 @@
         <activity
             android:name=".ListActivity"
             android:parentActivityName=".Start"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Game"
+            android:parentActivityName=".ListActivity" />
+        <activity
+            android:name=".ManageGame"
+            android:label="@string/title_activity_scrolling"
             android:parentActivityName=".ListActivity"
-           >
-
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pl.kwiateksoft.pilkarskiebingo.ListActivity" />
         </activity>
+        <activity android:name=".Create"></activity>
     </application>
 
 </manifest>
