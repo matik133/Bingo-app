@@ -24,7 +24,7 @@ public class Game extends AppCompatActivity {
     EditText autor, sentence;
     TextView dataView;
     TextView t;
-    boolean isClicked;
+    boolean isClicked; //if field is clicked
     List<TextView> fieldsList = new ArrayList<>();
     List<String> bingoWordList = new LinkedList<>(Arrays.asList("text1", "text2","text3","text4","text5","text6","text7","text8","text9","text10","text11","text12","text13","text14","text15","text16","text17","text18","text19","text20","text21","text22","text23","text24","text25"));
 
@@ -146,31 +146,21 @@ public class Game extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        String test = view.getResources().getResourceEntryName(view.getId());
+
         TextView t = findViewById(view.getId());
-        t.setText("SPRAWDZAM");
-        Toast.makeText(this, test, Toast.LENGTH_LONG).show();
-
-        switch (view.getId()) {
-            case R.id.field1:
-                t= findViewById(R.id.field1);
-                t.setBackgroundColor(Color.RED);
-                //t.setText("DUPA");
-
-                break;
-            case R.id.field2:
-                // do something else
-                break;
-            case R.id.field3:
-                // i'm lazy, do nothing
-                break;
-            case R.id.field4:
-                // do something else
-                break;
-            case R.id.field5:
-                // i'm lazy, do nothing
-                break;
+        if (t.getBackground()==null){
+            t.setBackgroundColor(Color.WHITE);
+            t.getBackground().setAlpha(127); //dodanie wyszarzenia pola po klinięciu
+            isClicked=true;
         }
+        else {
+            t.setBackground(null);
+            isClicked=false;
+        }
+
+
+
+
 
 
 
